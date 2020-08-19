@@ -7,9 +7,8 @@
 # eight cycles at 2400Hz. At 1200 baud a 0 is half a cycle at 600Hz and a 1 is
 # one cycle at 1200Hz tone. Or, if you prefer, at 1200 baud the output level is
 # always toggled once at the start of the bit, and if the bit is a 0 then it is
-# toggled again halfway through.""
+# toggled again halfway through."
 
-import sys
 import wave
 from scipy.io import wavfile
 from scipy.signal import butter, lfilter
@@ -20,8 +19,8 @@ import argparse
 # tuneable constants
 silence = 5000
 order = 6
-lowcut = 200
-hicut = 3000
+lowcut = 300
+hicut = 3700
 
 # global data
 blocks = []
@@ -277,7 +276,7 @@ if __name__ == "__main__":
     # eliminate start/stop bits, invert MSB/LSB
     bytes = get_bytes(bits)
 
-    # decode header block and fine length of data in recording
+    # decode header block and find length of data in recording
     length = print_header(bytes[101:117])
     load_block(bytes[101:117], bytes[117])
 
