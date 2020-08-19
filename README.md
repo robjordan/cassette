@@ -26,7 +26,7 @@ Additional notes:
 - It's very lightly tested at present, and hasn't been exposed to a variety of real WAV files. Tezza's files are quite ideal as they are digitally reconstructed by saving from the MESS emulator.
 - I briefly attempted to apply a bandpass filter to limit the audio to 300-3700 Hz, as per the Sorcerer hardware. I think the filter acts correctly but it didn't improve demodulation at all (in fact it got worse), so it's commented out. Something to play with later.
 - There is an alternative tool that fulfills the same purpose, but supports a much wider range of systems and functionality, but it didn't immediately work from me (I run Linux and the tool requires .NET, therefore Mono emulating .NET on Linux). It's [tapetool2](https://www.toptensoftware.com/tapetool/) by Brad Robinson.
-- I don't yet have any hardware which can load and run these binary files. I'm hoping to build something like [ClausB's amazing Teensy tape simulator](http://www.atariprotos.com/othersystems/sorcerer/misc/tapesim.htm.bak).
+- I don't yet have any hardware which can load and run these binary files. I'm hoping to build something like [ClausB's amazing Teensy tape simulator](http://www.atariprotos.com/othersystems/sorcerer/misc/tapesim.htm).
 
 Here's the usage and output of a typical run:
 ```bash
