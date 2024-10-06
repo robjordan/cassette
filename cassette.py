@@ -67,9 +67,10 @@ def get_tones(fname):
     # eliminate silent or near-silent header and trailer
     s = 0
     f = len(data)-1
-    while (abs(data[s]) < silence):
+    while (data[s] < silence and data[s] > -1*silence):
         s += 1
-    while (abs(data[f]) < silence):
+    print("end silence")
+    while (data[s] < silence and data[s] > -1*silence):
         f -= 1
     data = data[s-1:f]
 
@@ -224,7 +225,7 @@ def crc_block(bytes):  # extract the requisite bytes and compute CRC
 
 
 def reverse_bytes(bytes):
-    return hex((np.uint8(bytes[1]) << 8) | np.uint8(bytes[0]))
+    return hex((np.uint16(bytes[1]) << 8) | np.uint16(bytes[0]))
 
 
 def print_header(bytes):
